@@ -1,8 +1,8 @@
 {
   "name": "yarn-pkg-config",
-  "version": "0.29.1",
+  "version": "0.29.4",
   "scripts": {
-    "postinstall": "mkdir -p _build && ./configure --prefix $(pwd)/_build && make && make install"
+    "postinstall": "which pkg-config || (mkdir -p _build && ./configure --with-internal-glib --prefix $(pwd)/_build && make && make install)"
   },
   "exportedEnvVars": {
     "PATH": {
