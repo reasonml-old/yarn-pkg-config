@@ -1,0 +1,22 @@
+{
+  "name": "yarn-pkg-config",
+  "version": "0.29.1",
+  "scripts": {
+    "postinstall": "mkdir -p _build && ./configure --prefix $(pwd)/_build && make && make install"
+  },
+  "exportedEnvVars": {
+    "PATH": {
+      "global": true,
+      "resolveAsRelativePath": true,
+      "globalCollisionBehavior": "joinPath",
+      "val": "./_build/bin"
+    }
+  },
+  "dependencies": {
+    "nopam": "https://github.com/yunxing/nopam.git",
+    "dependency-env": "https://github.com/npm-ml/dependency-env.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
