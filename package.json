@@ -10,6 +10,12 @@
       "resolveAsRelativePath": true,
       "globalCollisionBehavior": "joinPath",
       "val": "./_build/bin"
+    },
+    "PKG_CONFIG_PATH": {
+      "global": true,
+      "resolveAsRelativePath": true,
+      "globalCollisionBehavior": "joinPath",
+      "val": "/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig:/usr/local/share/pkgconfig"
     }
   },
   "dependencies": {
