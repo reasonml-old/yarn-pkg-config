@@ -3,7 +3,7 @@
   "version": "0.29.5",
   "esy": {
     "build": [
-      "which pkg-config || (./configure --with-internal-glib --prefix $cur__target_dir && make && make install)"
+      "which pkg-config || (./configure --with-internal-glib --prefix $cur__install && make && make install)"
     ],
     "exportedEnv": {
       "PKG_CONFIG_PATH": {
