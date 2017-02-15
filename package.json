@@ -1,26 +1,17 @@
 {
   "name": "yarn-pkg-config",
   "version": "0.29.5",
-  "scripts": {
-    "postinstall": "which pkg-config || (mkdir -p _build && ./configure --with-internal-glib --prefix $(pwd)/_build && make && make install)"
-  },
-  "exportedEnvVars": {
-    "PATH": {
-      "global": true,
-      "resolveAsRelativePath": true,
-      "globalCollisionBehavior": "joinPath",
-      "val": "./_build/bin"
-    },
-    "PKG_CONFIG_PATH": {
-      "global": true,
-      "resolveAsRelativePath": true,
-      "globalCollisionBehavior": "joinPath",
-      "val": "/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig:/usr/local/share/pkgconfig"
-    }
-  },
-  "dependencies": {
-    "nopam": "https://github.com/yunxing/nopam.git",
-    "dependency-env": "https://github.com/npm-ml/dependency-env.git"
+  "esy": {
+    "build": [
+      "which pkg-config || (./configure --with-internal-glib --prefix $cur__target_dir && make && make install)"
+    ],
+    "exportedEnv": {
+      "PKG_CONFIG_PATH": {
+        "scope": "global",
+        "val": "/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig:/usr/local/share/pkgconfig:$cur__lib:$PKG_CONFIG_PATH"
+      }
+   },
+   "buildsInSource": true
   },
   "keywords": [],
   "author": "",
