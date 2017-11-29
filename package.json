@@ -3,7 +3,7 @@
   "version": "0.29.5",
   "esy": {
     "build": [
-      "which pkg-config || (./configure --with-internal-glib --prefix $cur__install && make && make install)"
+      "which pkg-config || (touch aclocal.m4 && touch glib/aclocal.m4 && touch configure && touch glib/configure && touch check/Makefile.am && touch glib/glib/gnulib/Makefile.am && touch glib/glib/libcharset/Makefile.am && touch glib/glib/Makefile.am && touch glib/m4macros/Makefile.am && touch glib/Makefile.am && touch Makefile.am && touch check/Makefile.in && touch glib/glib/gnulib/Makefile.in && touch glib/glib/libcharset/Makefile.in && touch glib/glib/Makefile.in && touch glib/m4macros/Makefile.in && touch glib/Makefile.in && touch Makefile.in && ./configure --with-internal-glib --prefix $cur__install && make && make install)"
     ],
     "exportedEnv": {
       "PKG_CONFIG_PATH": {
